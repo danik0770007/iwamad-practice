@@ -52,3 +52,18 @@ body { margin: 0; font-family: system-ui, sans-serif; background: #f1f5f9; color
   .card__top { flex-direction: row; align-items: flex-start; text-align: left; gap: 1.5rem; }
   .card__links { justify-content: flex-start; }
 }
+
+/* ===== Week 4: append this to the END of src/App.css ===== */
+.site-header { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; padding: 1.5rem 1rem 1rem; text-align: center; }
+.site-header__brand h1 { margin: 0; font-size: 1.6rem; }
+.site-header__brand p { margin: 0.25rem 0 0; color: #475569; }
+.nav { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.5rem 1rem; }
+.nav a { padding: 0.25rem 0.5rem; color: #1e293b; text-decoration: none; font-weight: 600; border-bottom: 3px solid transparent; }
+.nav a:hover { color: #0f766e; }
+.nav a.active { color: #0f766e; border-bottom-color: #0f766e; }  /* current page is marked */
+.nav__likes { font-weight: 600; color: #e11d48; }
+.page { max-width: 720px; margin: 0 auto; }
+.contact-list { padding-left: 1.25rem; }
+@media (min-width: 640px) {
+  .site-header { flex-direction: row; justify-content: space-between; text-align: left; padding: 1.25rem 2rem; }
+}
