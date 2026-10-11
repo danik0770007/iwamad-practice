@@ -1,3 +1,4 @@
+import Tag from './ui/Tag'
 import type { Skill } from '../types'
 
 type SkillBadgeProps = {
@@ -5,7 +6,11 @@ type SkillBadgeProps = {
 }
 
 function SkillBadge({ skill }: SkillBadgeProps) {
-  return <li className="skill-badge">{skill.label}</li>
+  return (
+    <li>
+      <Tag label={skill.label} />
+    </li>
+  )
 }
 
 export default SkillBadge

@@ -1,4 +1,5 @@
 import LikeButton from './LikeButton'
+import Card from './ui/Card'
 import { useLikes } from '../context/LikesContext'
 import type { ContactLink } from '../types'
 
@@ -14,7 +15,7 @@ function ProfileCard({ name, role, bio, avatarUrl, links }: ProfileCardProps) {
   const { likes } = useLikes()
 
   return (
-    <article className={likes > 0 ? 'card liked' : 'card'}>
+    <Card className={likes > 0 ? 'liked' : ''}>
       <div className="card__top">
         {avatarUrl ? (
           <img className="avatar" src={avatarUrl} alt={`Profile avatar of ${name}`} />
@@ -36,7 +37,7 @@ function ProfileCard({ name, role, bio, avatarUrl, links }: ProfileCardProps) {
         ))}
         <LikeButton />
       </div>
-    </article>
+    </Card>
   )
 }
 
