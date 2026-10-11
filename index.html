@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Profile | Tynymbay Danial</title>
+
+    <!-- Practice 2, Step 2: Tailwind via CDN (no build step) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Practice 1 styles (relative paths so it works in Vite AND on GitHub Pages) -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <header class="text-center py-8 px-4">
+        <h1 class="text-3xl font-bold">Tynymbay Danial</h1>
+        <p class="text-slate-600 mt-1">IT Management Student / Aspiring Web Developer</p>
+    </header>
+
+    <nav class="mb-6">
+        <ul class="flex flex-wrap justify-center gap-4 text-teal-700 font-medium">
+            <li><a href="#about" class="hover:underline">About</a></li>
+            <li><a href="#skills" class="hover:underline">Skills</a></li>
+            <li><a href="#goals" class="hover:underline">Goals</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="px-4 pb-10">
+
+        <!-- ===== PROFILE CARD ===== -->
+        <article class="card rounded-2xl shadow-lg bg-white" id="about">
+            <div class="card__top">
+                <img class="avatar"
+                     src="https://i.pinimg.com/736x/80/b7/81/80b781691d46d7f7a352a349ff48515f.jpg"
+                     alt="Profile avatar of Tynymbay Danial">
+                <div class="card__text">
+                    <h2 class="text-xl font-semibold">Tynymbay Danial</h2>
+                    <p class="mt-2 text-slate-600">
+                        Hi! I am a third-year IT Management student passionate about web development
+                        and software engineering. I am looking forward to mastering HTML, CSS, Git
+                        workflows, and building full-stack applications.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card__links">
+                <a class="link-pill" href="mailto:d_tynymbay@kbtu.kz">Email</a>
+                <a class="link-pill" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+                <button id="like-btn" class="like-btn" type="button" aria-pressed="false">♡ Like</button>
+            </div>
+        </article>
+
+        <section id="skills" class="max-w-3xl mx-auto mt-10">
+            <h2 class="text-2xl font-semibold mb-3">Skills</h2>
+            <ul class="list-disc pl-6 space-y-1">
+                <li>Basic understanding of Git &amp; GitHub</li>
+                <li>Command line fundamentals</li>
+                <li>HTML5 &amp; CSS3 layout basics</li>
+                <li>Problem-solving &amp; Teamwork</li>
+            </ul>
+        </section>
+
+        <section id="goals" class="max-w-3xl mx-auto mt-10">
+            <h2 class="text-2xl font-semibold mb-3">Course Goals</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse bg-white rounded-lg">
+                    <thead>
+                        <tr class="bg-slate-200 text-left">
+                            <th class="p-3 border border-slate-300">Technology / Skill</th>
+                            <th class="p-3 border border-slate-300">Current Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="p-3 border border-slate-300">HTML5 &amp; Semantic Markup</td><td class="p-3 border border-slate-300">Basic</td></tr>
+                        <tr><td class="p-3 border border-slate-300">Git Branching &amp; Pull Requests</td><td class="p-3 border border-slate-300">Beginner</td></tr>
+                        <tr><td class="p-3 border border-slate-300">Responsive Web Design</td><td class="p-3 border border-slate-300">Plan to learn</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact" class="max-w-3xl mx-auto mt-10">
+            <h2 class="text-2xl font-semibold mb-3">Contact Me</h2>
+            <p class="mb-4">Email: <a class="text-teal-700 underline" href="mailto:d_tynymbay@kbtu.kz">d_tynymbay@kbtu.kz</a></p>
+            <form class="flex flex-col gap-3">
+                <label for="name">Name
+                    <input class="block w-full mt-1 p-2 rounded border border-slate-300" type="text" id="name" name="name">
+                </label>
+                <label for="email">Email
+                    <input class="block w-full mt-1 p-2 rounded border border-slate-300" type="email" id="email" name="email">
+                </label>
+                <label for="message">Message
+                    <textarea class="block w-full mt-1 p-2 rounded border border-slate-300" id="message" name="message" rows="4"></textarea>
+                </label>
+                <button class="self-start px-5 py-2 rounded bg-teal-700 text-white hover:bg-teal-800" type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="text-center py-6 text-slate-500 text-sm">
+        <p>&copy; 2026 Tynymbay Danial. All rights reserved.</p>
+    </footer>
+
+    <!-- Practice 2, Step 1: interactivity (module works in Vite and on GitHub Pages) -->
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
