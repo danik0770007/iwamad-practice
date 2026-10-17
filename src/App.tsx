@@ -1,10 +1,11 @@
-import './App.css'
-import { Route, Routes } from 'react-router'
-import Layout from './components/Layout'
-import HomePage from './pages/HomePage'
-import SkillsPage from './pages/SkillsPage'
-import ContactPage from './pages/ContactPage'
-import NotFoundPage from './pages/NotFoundPage'
+import "./App.css";
+import { Route, Routes } from "react-router";
+import Layout from "./components/Layout";
+import HomePage from "./pages/HomePage";
+import SkillsPage from "./pages/SkillsPage";
+import ContactPage from "./pages/ContactPage";
+import RegisterPage from "./pages/RegisterPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -13,10 +14,11 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="skills" element={<SkillsPage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="register" element={<RegisterPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;

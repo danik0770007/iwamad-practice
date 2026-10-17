@@ -1,14 +1,14 @@
-import { NavLink } from 'react-router'
-import { useLikes } from '../context/LikesContext'
-import logo from '../assets/logo.svg'
+import { NavLink } from "react-router";
+import { useLikes } from "../context/LikesContext";
+import logo from "../assets/logo.svg";
 
 type HeaderProps = {
-  name: string
-  role: string
-}
+  name: string;
+  role: string;
+};
 
 function Header({ name, role }: HeaderProps) {
-  const { likes } = useLikes()
+  const { likes } = useLikes();
 
   return (
     <header className="site-header">
@@ -21,14 +21,27 @@ function Header({ name, role }: HeaderProps) {
       </div>
       <nav aria-label="Main">
         <ul className="nav">
-          <li><NavLink to="/" end>Home</NavLink></li>
-          <li><NavLink to="/skills">Skills</NavLink></li>
-          <li><NavLink to="/contact">Contact</NavLink></li>
-          <li className="nav__likes" aria-label={`${likes} likes`}>♥ {likes}</li>
+          <li>
+            <NavLink to="/" end>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/skills">Skills</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
+          <li>
+            <NavLink to="/register">Register</NavLink>
+          </li>
+          <li className="nav__likes" aria-label={`${likes} likes`}>
+            ♥ {likes}
+          </li>
         </ul>
       </nav>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
