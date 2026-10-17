@@ -1,0 +1,70 @@
+/* ===== Practice 1: the card (box model + Flexbox + responsive) =====
+   Practice 2 / Step 2: these rules were REPLACED by Tailwind classes in the HTML:
+     - body background + font colour  -> bg-slate-100 text-slate-800
+     - card border-radius + shadow    -> rounded-2xl shadow-lg
+     - card background                -> bg-white
+     - header/nav spacing & centring  -> py-8, flex, gap-4, text-center
+*/
+
+.card {
+    max-width: 720px;          /* readable width on desktop */
+    margin: 0 auto;            /* MARGIN: 0 top/bottom, auto left/right centres the card */
+    padding: 1.5rem;           /* PADDING: 24px of space between border and content */
+    border: 2px solid #0f766e; /* BORDER: 2px solid teal outline */
+    display: flex;             /* Flexbox: stack the top row and the links row */
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: background-color .25s, border-color .25s;
+}
+
+/* Avatar + text: column on mobile, row on desktop */
+.card__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #99f6e4;
+}
+
+/* Row of links wraps on narrow screens */
+.card__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem;
+}
+
+.link-pill,
+.like-btn {
+    padding: .5rem 1rem;
+    border: 1px solid #0f766e;
+    border-radius: 999px;
+    background: #fff;
+    color: #0f766e;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+.link-pill:hover,
+.like-btn:hover { background: #f0fdfa; }
+:focus-visible { outline: 3px solid #0f766e; outline-offset: 2px; }
+
+/* Step 1: "liked" state — highlights the card and the button */
+.card.liked { background-color: #fff1f2; border-color: #e11d48; }
+.like-btn.liked { background: #e11d48; border-color: #e11d48; color: #fff; }
+
+/* Desktop: avatar left, text right */
+@media (min-width: 640px) {
+    .card { padding: 2rem; }
+    .card__top { flex-direction: row; text-align: left; align-items: flex-start; gap: 1.5rem; }
+    .card__links { justify-content: flex-start; }
+}
