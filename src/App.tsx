@@ -12,6 +12,8 @@ function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
+        <Route path="events" element={<EventsPage />} />
+        <Route path="events/:eventId" element={<EventDetailsPage />} />
         <Route path="skills" element={<SkillsPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="register" element={<RegisterPage />} />

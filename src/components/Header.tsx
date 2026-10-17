@@ -27,6 +27,9 @@ function Header({ name, role }: HeaderProps) {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/events">Events</NavLink>
+          </li>
+          <li>
             <NavLink to="/skills">Skills</NavLink>
           </li>
           <li>
