@@ -6,6 +6,8 @@ import SkillsPage from "./pages/SkillsPage";
 import ContactPage from "./pages/ContactPage";
 import RegisterPage from "./pages/RegisterPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { EventsPage } from "./pages/EventsPage";
+import { EventDetailsPage } from "./pages/EventDetailsPage";
 
 function App() {
   return (

@@ -1,26 +1,32 @@
-import LikeButton from './LikeButton'
-import Card from './ui/Card'
-import { useLikes } from '../context/LikesContext'
-import type { ContactLink } from '../types'
+import LikeButton from "./LikeButton";
+import { Card } from "./ui/Card";
+import { useLikes } from "../context/LikesContext";
+import type { ContactLink } from "../types";
 
 type ProfileCardProps = {
-  name: string
-  role: string
-  bio: string
-  avatarUrl?: string
-  links: ContactLink[]
-}
+  name: string;
+  role: string;
+  bio: string;
+  avatarUrl?: string;
+  links: ContactLink[];
+};
 
 function ProfileCard({ name, role, bio, avatarUrl, links }: ProfileCardProps) {
-  const { likes } = useLikes()
+  const { likes } = useLikes();
 
   return (
-    <Card className={likes > 0 ? 'liked' : ''}>
+    <Card className={likes > 0 ? "liked" : ""}>
       <div className="card__top">
         {avatarUrl ? (
-          <img className="avatar" src={avatarUrl} alt={`Profile avatar of ${name}`} />
+          <img
+            className="avatar"
+            src={avatarUrl}
+            alt={`Profile avatar of ${name}`}
+          />
         ) : (
-          <div className="avatar avatar--fallback" aria-hidden="true">{name.charAt(0)}</div>
+          <div className="avatar avatar--fallback" aria-hidden="true">
+            {name.charAt(0)}
+          </div>
         )}
         <div className="card__text">
           <h2>{name}</h2>
@@ -31,14 +37,20 @@ function ProfileCard({ name, role, bio, avatarUrl, links }: ProfileCardProps) {
 
       <div className="card__links">
         {links.map((link) => (
-          <a key={link.id} className="link-pill" href={link.href} target="_blank" rel="noopener noreferrer">
+          <a
+            key={link.id}
+            className="link-pill"
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {link.label}
           </a>
         ))}
         <LikeButton />
       </div>
     </Card>
-  )
+  );
 }
 
-export default ProfileCard
+export default ProfileCard;
